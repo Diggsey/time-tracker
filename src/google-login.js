@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 const GoogleAuth = new Promise((resolve, reject) => {
     gapi.load('client:auth2', () => {
         gapi.client.init({
-            'clientId': '286984093971-5q54mab80albs7453qea0t5b4u79umio.apps.googleusercontent.com',
+            'clientId': '286984093971-16of5d26s1i7lta72980nlp7qfsc95cs.apps.googleusercontent.com',
             'scope': 'profile email https://www.googleapis.com/auth/spreadsheets',
             'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4']
         }).then(() => {
@@ -28,7 +28,8 @@ class GoogleLogin extends React.Component {
             this.auth = auth;
             this.auth.isSignedIn.listen(() => this.updateSigninStatus());
             this.updateSigninStatus();
-        }, () => {
+        }, (error) => {
+            console.error(error);
             this.setState({state: States.ERROR});
         });
     }
