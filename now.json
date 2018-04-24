@@ -1,0 +1,6 @@
+{
+    "name": "time-tracker",
+    "alias": "time-tracker",
+    "type": "static",
+    "public": true
+}

@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js"
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js",
+    "deploy": "yarn build && now app --local-config=../now.json && now alias"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
